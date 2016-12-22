@@ -62,8 +62,32 @@ class WishDB extends PDO{
 
 	 public function verify_wisher_credentials($user, $userpassword){
 	 	$stmt = $this->prepare("SELECT 1 FROM wishers WHERE name = :name AND password = :pass");
-	    $stmt->execute(['name' => $user, 'pass' => $userpassword]);
+	    $stmt->execute([':name' => $user, ':pass' => $userpassword]);
 	 	return $stmt->fetchColumn();
 	 }
+
+	 public function insert_wish($wisher_id, $description, $due_date){
+	 	$stmt = $this->prepare("INSERT INTO wishes (wisher_id, description, due_date) VALUES(:wisher_id, :description, :due_date)");
+	    $stmt->execute([':wisher_id' => $wisher_id, ':description' => $description, 'due_date'=>
+	    	$this->format_date_for_sql($due_date)]);
+	 }
+
+	 public function format_date_for_sql($date){
+	    if ($date == "")
+	        return null;
+	    else {
+	        $dateParts = date_parse($date);
+	        if (!$dateParts)
+	        	return null;
+
+	        return $dateParts["year"] . "-"
+	        . $dateParts["month"] . "-"
+	        . $dateParts["day"];
+
+		}
+
+	}
+
+
 }
 ?>
