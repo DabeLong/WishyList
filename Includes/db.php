@@ -55,18 +55,14 @@ class WishDB extends PDO{
 	 }
 
 	 public function create_wisher($name, $password){
-	 	$stmt = $this->prepare("INSERT INTO wishers (name, password) VALUES(?, ?)");
-	 	$stmt->bindParam(1, $name);
-	 	$stmt->bindParam(2, $password);
-	 	$stmt->execute();
+	 	$stmt = $this->prepare("INSERT INTO wishers (name, password) VALUES(:name, :pass)");
+	 	$stmt->execute([':name' => $name, ':pass' => $password]);
 	 	return $stmt;
 	 }
 
 	 public function verify_wisher_credentials($user, $userpassword){
-	 	$stmt = $this->prepare("SELECT 1 FROM wishers WHERE user = ? AND password = ?");
-	 	$stmt->bindParam(1, $name);
-	 	$stmt->bindParam(2, $userpassword);
-	    $stmt->execute();
+	 	$stmt = $this->prepare("SELECT 1 FROM wishers WHERE name = :name AND password = :pass");
+	    $stmt->execute(['name' => $user, 'pass' => $userpassword]);
 	 	return $stmt->fetchColumn();
 	 }
 }
