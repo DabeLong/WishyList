@@ -35,7 +35,6 @@
 		<form name="addNewWish" action="editWish.php">            
             <input type="submit" value="Add Wish">
 	    </form>
-
 	</body>
 
 

@@ -6,14 +6,22 @@
     $logonSuccess = false;
 ?>	 
 
-<section>
-    <h1 style="text-align:center; background: #2196F3;
-        height: 2em; vertical-align: middle; line-height: 2em;
-        border-color: black; border-width: 2px; border-style: solid;
-        color: #FFFFFF">
-    Welcome to WishyLists
-    </h1>
-</section>
+<div style="position: relative;">
+	<section style="position: relative; background: #2196F3; position: relative; height: 10em;
+	        border-color: blue; border-width: 2px; border-style: solid;">
+
+	    <h1 style="position: absolute; color: #FFFFFF; margin-top: 0.1em; font-size: 5em;
+	    	margin-left: 1.5em;">
+	    	WishyLists
+	    </h1>
+
+	    <h3 style="position: absolute; color: #FFFFFF; margin-top: 4em; font-size: 1.5em;
+	    	margin-left: 4em;">
+	    	Wishing that Your Dreams Come True
+	    </h3>
+	    
+	</section>
+</div>
 
 <!-- SEARCH FOR WISHLIST -->
 <section style="position: relative">
@@ -23,7 +31,7 @@
                    style="border-width: 0px; color: #2196F3;
                    background: transparent; position: absolute;
                    right: 0px;
-                   z-index: 1; padding: 2em; margin-right: 2em" />
+                   z-index: 1; padding: 1em; margin-right: 2em; margin-top: 1em;" />
             
             <input type="text" name="user" value="" 
              style="margin: 15px 0px 0px 0px; position: relative"/>
