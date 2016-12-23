@@ -6,25 +6,8 @@
     $logonSuccess = false;
 ?>	 
 
-<div style="position: relative;">
-	<section style="position: relative; background: #2196F3; position: relative; height: 10em;
-	        border-color: blue; border-width: 2px; border-style: solid;">
-
-	    <h1 style="position: absolute; color: #FFFFFF; margin-top: 0.1em; font-size: 5em;
-	    	margin-left: 1.5em;">
-	    	WishyLists
-	    </h1>
-
-	    <h3 style="position: absolute; color: #FFFFFF; margin-top: 4em; font-size: 1.5em;
-	    	margin-left: 4em;">
-	    	Wishing that Your Dreams Come True
-	    </h3>
-	    
-	</section>
-</div>
-
 <!-- SEARCH FOR WISHLIST -->
-<section style="position: relative">
+<div style="position: relative">
     <form name="wishList" action="wishlist.php">
         <h2 style="margin: 10px;">Show wish list of:
             <input type="submit" value="Go" 
@@ -38,13 +21,13 @@
             
         </h2> 
     </form>      
-</section>
+</div>
 
 <br>
 
 
 <!-- LOGIN -->
-<section style="margin: 10px;">
+<div style="margin: 10px;">
     <h2>
         <form name="logon" action="index.php" method="POST">
             Username: <input type="text" name="user">
@@ -88,7 +71,7 @@
 		?>
 
     </h2>
-</section>
+</div>
 
 <br>
 
